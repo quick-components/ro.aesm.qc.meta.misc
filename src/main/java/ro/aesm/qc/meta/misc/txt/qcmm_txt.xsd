@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="https://qc.aesm.ro/meta/txt"
+	xmlns="https://qc.aesm.ro/meta/txt" attributeFormDefault="unqualified"
+	elementFormDefault="qualified">
+
+	<!-- ==================== TEXT PROCESSOR =================== -->
+
+	<xs:element name="keep">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="from" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="to" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="from" type="xs:string" />
+			<xs:attribute name="to" type="xs:string" />
+			<xs:attribute name="from_offset" type="xs:int" />
+			<xs:attribute name="to_offset" type="xs:int" />
+			<xs:attribute name="occurrence" type="xs:string" />
+			<xs:attribute name="index" type="xs:string" />
+			<xs:attribute name="separator" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="replace">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="from" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="to" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="what" type="xs:string" />
+			<xs:attribute name="with" type="xs:string" />
+			<xs:attribute name="occurrence" type="xs:string" />
+			<xs:attribute name="index" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="replace_between">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="from" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+				<xs:element name="to" type="xs:string" minOccurs="0"
+					maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="from" type="xs:string" />
+			<xs:attribute name="to" type="xs:string" />
+			<xs:attribute name="from_offset" type="xs:int" />
+			<xs:attribute name="to_offset" type="xs:int" />
+			<xs:attribute name="with" type="xs:string" />
+			<xs:attribute name="occurrence" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- ===================================== -->
+
+	<xs:complexType name="TxtProcessor">
+		<xs:sequence>
+			<xs:any namespace="https://www.quick-components.com/txt"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:any>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" />
+	</xs:complexType>
+
+</xs:schema> 

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: QC miscellaneous meta model
+Bundle-SymbolicName: ro.aesm.qc.meta.misc
+Bundle-Version: 0.0.1.qualifier
+Export-Package: ro.aesm.qc.meta.misc.txt
+Import-Package: 
+ org.osgi.service.component.annotations;version="1.5.0";resolution:=optional,
+ ro.aesm.qc.api.base,
+ ro.aesm.qc.api.exception,
+ ro.aesm.qc.api.meta.component,
+ ro.aesm.qc.base.util,
+ ro.aesm.qc.base
+Automatic-Module-Name: ro.aesm.qc.meta.misc
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Service-Component: OSGI-INF/ro.aesm.qc.meta.misc.txt.TxtParser.xml
